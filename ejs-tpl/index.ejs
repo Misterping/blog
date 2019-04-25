@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <script src="./jq.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css"> 
+    <style> body{ background-color: rgb(233,215,233); } .imgf{position:absolute;} #img{position:relative;right:20px;}
+    </style>
+</head>
+<body>
+<div class="home">
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">首页</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/admit">管理</a>
+            </div>
+            <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.baidu.com">百度</a>
+            </div>
+            <div class="navbar-header">
+            <a class="navbar-brand" href="/admit/login">登录</a>
+            </div> 
+            <div class="navbar-header col-md-offset-8">
+            <a class="navbar-brand " href="/cool.html">作品</a>
+            </div>  
+            <div class="navbar-header ">
+            <a class="navbar-brand  notice-btn" >声明</a>
+            </div>
+          </div>
+        </div>
+      </nav>    
+</div>
+<div class="page-header">
+         <div class="col-sm-2 imgf"></div>
+         <h2><em>博客 </em><small><em> 带你见证奇迹
+         </em></small></h2>
+      </div>
+
+    
+    <div class="container ">
+        <div class="page-header">
+            <h1><em> 科技引领未来</em>
+                <small>
+                你想要的答案都在这里</small>
+            </h1>
+            <ul class="list-group ">
+            <% data.forEach(function(e){ %>
+            <li class="list-group-item ">
+            <a href="/p?_id=<%=e._id%>">
+                <h3>
+                <%=e.title%>
+                </h3>
+            </a>
+            <p>作者：<%=e.author%></p>
+             <p>日期：<%=e.date%></p>
+              <p>简介：<%=e.intro%></p>
+             <h5> <strong>内容：</strong></h5>
+             <div class="panel-body ">
+               <strong>
+               <pre>
+               <%=e.content%>
+               </pre>
+               </strong>
+                </div>
+        </li>
+            <%}) %>    
+            </ul>
+        </div>
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<!--模态框部分-->
+    <div class="modal fade notice" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>本站发送的系统仅为个人学习测试使用,不得用于商业用途，否则后果自负&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+var noticeBtn= $('.notice-btn')
+var notice=$('.notice')
+noticeBtn.on('click',function(){
+   notice.modal('show')
+})
+</script>
+ 
+</body>
+
+</html>

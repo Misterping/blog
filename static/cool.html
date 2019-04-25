@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>音乐魔方</title>
+		<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+			<script src="./jq.js"></script>
+		<script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	
+		<script type="text/javascript">
+			window.onload=function(){
+				var move=function(){
+				var index=0;
+				var table=document.getElementsByTagName('table');
+				  for(var i=0;i<table.length;i++)
+				  {
+				  	var tr=table[i].getElementsByTagName('tr');
+			  	
+				  	for(var j=0;j<tr.length;index++,j++)
+				  	{
+			  			j=parseInt(Math.random()*index);
+			  			if(index==9)
+			  			{
+			  				index=parseInt(Math.random()*4);
+			  				
+			  				break;
+			  			}
+			  			tr[j].style.backgroundColor='';
+				  		var td=tr[j].getElementsByTagName('td');
+				  		
+				  		for(var k=0;k<td.length;k++){
+				  			td[k].style.backgroundColor=color(Math.floor(Math.random()*7));
+				  		}
+				  	}
+				  	}
+				  }
+			setInterval(move,100)
+				  }
+			
+			
+			var color=function(e){
+				var random='';
+				switch(e){
+					case 0:random='#2e4e7e';
+					break;
+					case 1:random='red';
+					break;
+					case 3:random='yellow';
+					break;
+					case 4:random='green';
+					break;
+					case 5:random='blue';
+					break;
+					case 6:random='golden';
+					break;
+				}
+				return random;
+			}
+			
+	
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			html,body{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+			
+				
+			}
+			body{
+				background: -webkit-radial-gradient(center center,80% 80%,#003371,black);
+			   position: absolute;
+			}
+			#fistpage{
+				display: block;
+				position: absolute;
+				top: 0px;
+				left:5px;
+				
+			}
+			a{
+				text-decoration: none;
+			}
+			.my-container{
+				width: 100%;
+				height: 320px;
+				display: flex;
+                justify-content: center;
+			}
+			
+			.photo{
+				width:100% ;
+				height: 320px;
+				perspective: 1600px;
+				perspective-origin: 170px -230px;
+				display: flex;
+				justify-content: center;
+			}
+			.container{
+				width: 320px;
+				height: 320px;
+				transform-style: preserve-3d;
+				position: relative;
+				animation: zhuan1 10s infinite linear backwards;
+
+			}
+			@keyframes zhuan1{
+				from{transform: rotatey(0deg)  rotateX(10deg);}
+				to{transform: rotatey(360deg)  rotateX(360deg);}
+			}
+
+			.container div{
+				 width: 320px;
+				height: 320px;
+				position: absolute;
+                background-color:#003377; 
+                opacity: 0.9;
+			}
+			.one {
+			
+				transform: translateZ(160px);
+			}
+			
+			.two {
+		
+				transform: rotateY(180deg) translateZ(160px);
+			}
+			
+			.three {
+			
+				transform: rotateY(90deg) translateZ(160px);
+			}
+			
+			.four {
+			
+				transform: rotateY(-90deg) translateZ(160px);
+			}
+			
+			.five {
+		
+				transform: rotateX(90deg) translateZ(160px);
+			}
+			
+			.six {
+		
+				transform: rotateX(-90deg) translateZ(160px);
+			}
+
+		td {
+				height: 40px;
+				width: 40px;
+				box-sizing: border-box;
+				box-shadow: 0px 0px 4px 2px #3eede7;
+				border-radius: 40%;
+			}
+/*--- ------------------------------------------ */
+			.case{
+				 position: absolute;
+				bottom: 0px;
+				left: -3px; 
+			}
+/* ------------------------------------------------ */
+		
+		</style>
+	</head>
+	<body>
+	<div id="fistpage">
+		<a href="/">首页</a>
+		&nbsp;
+		<a href="javascript:void(0)" id='control' >音乐</a>
+	</div>
+	<div class="case">
+		<audio controls="" loop autoplay="" id="audio" name="media"><source src="./video/邓壬鑫 - 一百万个可能【纯音乐版】（Cover：Christine welch）.mp3" type="audio/mpeg"></audio>
+	</div>
+		<div class="my-container">
+			<div class="photo">
+				<div class="container">
+					<div class="one">
+						<table cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="two">
+					<table cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="three">
+						<table cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="four">
+						<table cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="five">
+						<table cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="six">
+						<table cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var control=document.getElementById('control')
+			var audio=document.getElementById('audio')
+			var container=document.getElementsByClassName('container')[0]
+			audio.style.display='none'
+			var isDown=true
+			audio.pause()
+			control.addEventListener('click',function(){
+				
+				if(isDown)
+				{
+					audio.style.display='block'
+					isDown=false
+				}
+				else{
+					audio.style.display='none'
+					isDown=true
+				}
+				setInterval(function(){
+                     audio.style.display='none'
+				},10000)
+			})
+			
+			container.addEventListener('click',function(){
+				
+				if(isDown){ 
+				audio.play()
+				isDown=!isDown
+				}
+				else{
+					audio.pause()
+					isDown=!isDown
+				}
+			})
+            control.style.fontSize='2em';
+		// 	var fn=function(){
+		// 	var xhr=new XMLHttpRequest()
+		//   xhr.open('get','http://localhost:3000/music/url?id=130232',true)
+		//   xhr.send()
+		//   xhr.onreadystatechange=function(){
+		// 	  if(xhr.readyState==4&& xhr.status==200)
+		// 	  {
+			
+		// 		console.log(xhr.response)
+		           
+		// 	  }
+		//   }
+		// 	}
+		</script>
+	</body>
+</html>

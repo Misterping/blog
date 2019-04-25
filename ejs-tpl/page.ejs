@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>评论</title>
+    <script src="./jq.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <style> body{ background-color: rgb(233,215,233); } </style>
+</head>
+
+<body> 
+
+<div class="home">
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+           
+            <a class="navbar-brand" href="/">首页</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class=""><a href="/admit">管理 </a></li>
+              <li class=""><a href="https://www.baidu.com">百度</a></li>
+              <li><a href="/admit/login">登录</a></li>
+              <li><a href="/admit/cool.html">技术</a></li>
+            </ul>
+            </ul>
+          </div>
+        </div>
+      </nav>    
+</div>
+
+<div class="container">
+<div class="page-header">
+    <h1>
+        <%=data.title%>
+            <small>
+                <%=data.intro%>
+            </small>
+    </h1>
+</div>
+<div>
+    分类：
+    <span class="label label-primary">
+        <%=data.sort%>
+    </span>
+</div>
+<p>作者：
+    <%=data.author%>
+</p>
+<p>日期：
+    <%=data.date%>
+</p>
+<p>内容：</p>
+<div class="panel-footer">
+    <strong>
+        <!--content-->
+    </strong>
+</div>
+<br>
+
+
+<div class="panel-footer">
+    <h3><em>我要留言</em></h3>
+    <form method="POST" action="/submitcomment?_id=<%=data._id%>">
+        <div class="form-group">
+            <label for="exampleInputEmail1"><em>邮箱：</em></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="xx@qq.com" name="email">
+            </div>
+        <div class="form-group">
+        <p><em>内容：</em></p>
+            <textarea class="form-control" rows="3" name="content"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success col-lg-4">留言</button>
+    </form>
+    </div>
+
+<br>
+<ul class="list-group">
+    <h3>
+        <em>留言专区：</em>
+    </h3>
+    <% comment.forEach(function(e,n){ %>
+        <li class="list-group-item">
+            <div class="panel panel-default">
+            <div class="panel-footer">
+                    <p> 
+             #<%=n+1%>楼 &nbsp;主人：<%=e.author%> &nbsp; &nbsp; 日期：<%=e.date%>
+                    </p>
+                </div>
+                <div class="panel-body panel-footer">
+                    <strong>
+                       <pre> <%=e.content%></pre>
+                    </strong>
+                </div> 
+            </div>
+        </li>
+        <%}) %>
+</ul>
+
+    </div>
+</body>
+
+</html>
